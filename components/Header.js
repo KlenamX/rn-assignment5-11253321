@@ -27,7 +27,6 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   header: {
-    paddingHorizontal: 20,
     marginTop: 55,
     flexDirection: "row",
     alignItems: "center",

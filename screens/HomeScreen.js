@@ -1,20 +1,33 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 import Header from "../components/Header";
+import Card from "../components/Card";
 
 export default function HomeScreen() {
   return (
     <View style={styles.screen}>
       <Header />
+      <Card />
     </View>
   );
 }
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    paddingHorizontal: 25,
     backgroundColor: "#ffffff",
   },
   header: {
     marginTop: 10,
   },
+  card: {
+    marginTop: 30,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  image: {
+    // width: "100%",
+  },
+
+  buttons: {},
 });
