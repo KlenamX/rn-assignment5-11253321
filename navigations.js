@@ -106,7 +106,7 @@ export default function Navigations() {
                     fontWeight: "500",
                   }}
                 >
-                  My Cards
+                  Statistics
                 </Text>
               </View>
             ),
@@ -135,7 +135,7 @@ export default function Navigations() {
                     fontWeight: "500",
                   }}
                 >
-                  My Cards
+                  Settings
                 </Text>
               </View>
             ),
