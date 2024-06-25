@@ -1,10 +1,10 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-export default function MyCards() {
+export default function StatisticsScreen() {
   return (
     <View>
-      <Text>MyCards</Text>
+      <Text>StatisticsScreen</Text>
     </View>
   );
 }
