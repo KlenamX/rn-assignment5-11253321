@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   },
 
   text2: {
-    color: "#ffffff",
+    color: "black",
     fontSize: 24,
     fontWeight: "600",
   },
