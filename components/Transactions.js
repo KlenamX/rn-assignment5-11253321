@@ -7,6 +7,7 @@ import {
 } from "react-native";
 import React from "react";
 import TransactionsCards from "./TransactionsCards";
+import { useTheme } from "../ThemeContext";
 
 const Data = [
   {
@@ -40,10 +41,13 @@ const Data = [
 ];
 
 export default function Transactions() {
+  const { isEnabled } = useTheme();
   return (
     <View style={styles.container}>
       <View style={styles.head}>
-        <Text style={styles.text1}>Transactions</Text>
+        <Text style={isEnabled ? styles.text1D : styles.text1}>
+          Transactions
+        </Text>
         <TouchableOpacity>
           <Text style={styles.text2}>See All</Text>
         </TouchableOpacity>
@@ -80,6 +84,12 @@ const styles = StyleSheet.create({
   text1: {
     fontSize: 20,
     fontWeight: "500",
+    color: "black",
+  },
+  text1D: {
+    fontSize: 20,
+    fontWeight: "500",
+    color: "white",
   },
   text2: {
     fontSize: 18,

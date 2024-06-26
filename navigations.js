@@ -6,6 +6,7 @@ import StatisticsScreen from "./screens/StatisticsScreen";
 import { Settings, Text, View } from "react-native";
 import SettingsScreen from "./screens/SettingsScreen";
 import { AntDesign, Feather, FontAwesome } from "@expo/vector-icons";
+import { useTheme } from "./ThemeContext";
 
 const Tab = createBottomTabNavigator();
 
@@ -13,6 +14,7 @@ const primaryColor = "#0066ff";
 const greyColor = "#8b8b94";
 
 export default function Navigations() {
+  const { isEnabled } = useTheme();
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -20,7 +22,7 @@ export default function Navigations() {
           headerShown: false,
           tabBarShowLabel: false,
           tabBarStyle: {
-            backgroundColor: "#ffffff",
+            backgroundColor: isEnabled ? "#27273a" : "#ffffff",
             height: 90,
           },
         }}

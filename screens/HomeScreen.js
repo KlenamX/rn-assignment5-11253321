@@ -3,10 +3,12 @@ import React from "react";
 import Header from "../components/Header";
 import Card from "../components/Card";
 import Transactions from "../components/Transactions";
+import { useTheme } from "../ThemeContext";
 
 export default function HomeScreen() {
+  const { isEnabled } = useTheme();
   return (
-    <View style={styles.screen}>
+    <View style={isEnabled ? styles.dark : styles.screen}>
       <Header />
       <Card />
       <Transactions />
@@ -18,6 +20,11 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 25,
     backgroundColor: "#ffffff",
+  },
+  dark: {
+    flex: 1,
+    paddingHorizontal: 25,
+    backgroundColor: "#161622",
   },
   header: {
     marginTop: 10,

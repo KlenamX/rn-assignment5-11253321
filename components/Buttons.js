@@ -3,33 +3,51 @@ import React from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import SimpleLineIcons from "@expo/vector-icons/SimpleLineIcons";
+import { useTheme } from "../ThemeContext";
 
 export default function Buttons() {
+  const { isEnabled } = useTheme();
   return (
     <View style={styles.container}>
       <View style={styles.button}>
-        <TouchableOpacity style={styles.icon}>
-          <AntDesign name="arrowup" size={24} color="black" />
+        <TouchableOpacity style={isEnabled ? styles.iconD : styles.icon}>
+          <AntDesign
+            name="arrowup"
+            size={24}
+            color={isEnabled ? "white" : "black"}
+          />
         </TouchableOpacity>
-        <Text style={styles.text}>Sent</Text>
+        <Text style={isEnabled ? styles.textD : styles.text}>Sent</Text>
       </View>
       <View style={styles.button}>
-        <TouchableOpacity style={styles.icon}>
-          <AntDesign name="arrowdown" size={24} color="black" />
+        <TouchableOpacity style={isEnabled ? styles.iconD : styles.icon}>
+          <AntDesign
+            name="arrowdown"
+            size={24}
+            color={isEnabled ? "white" : "black"}
+          />
         </TouchableOpacity>
-        <Text style={styles.text}>Receive</Text>
+        <Text style={isEnabled ? styles.textD : styles.text}>Receive</Text>
       </View>
       <View style={styles.button}>
-        <TouchableOpacity style={styles.icon}>
-          <FontAwesome5 name="search-dollar" size={24} color="black" />
+        <TouchableOpacity style={isEnabled ? styles.iconD : styles.icon}>
+          <FontAwesome5
+            name="search-dollar"
+            size={24}
+            color={isEnabled ? "white" : "black"}
+          />
         </TouchableOpacity>
-        <Text style={styles.text}>Loan</Text>
+        <Text style={isEnabled ? styles.textD : styles.text}>Loan</Text>
       </View>
       <View style={styles.button}>
-        <TouchableOpacity style={styles.icon}>
-          <SimpleLineIcons name="cloud-upload" size={24} color="black" />
+        <TouchableOpacity style={isEnabled ? styles.iconD : styles.icon}>
+          <SimpleLineIcons
+            name="cloud-upload"
+            size={24}
+            color={isEnabled ? "white" : "black"}
+          />
         </TouchableOpacity>
-        <Text style={styles.text}>Topup</Text>
+        <Text style={isEnabled ? styles.textD : styles.text}>Topup</Text>
       </View>
     </View>
   );
@@ -53,8 +71,19 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 100,
   },
+  iconD: {
+    backgroundColor: "#27273a",
+    padding: 20,
+    borderRadius: 100,
+  },
   text: {
     fontSize: 18,
     fontWeight: "450",
+    color: "black",
+  },
+  textD: {
+    fontSize: 18,
+    fontWeight: "450",
+    color: "#7e848d",
   },
 });
