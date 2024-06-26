@@ -2,12 +2,14 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 import Header from "../components/Header";
 import Card from "../components/Card";
+import Transactions from "../components/Transactions";
 
 export default function HomeScreen() {
   return (
     <View style={styles.screen}>
       <Header />
       <Card />
+      <Transactions />
     </View>
   );
 }
